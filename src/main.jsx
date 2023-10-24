@@ -11,12 +11,14 @@ import Products from './pages/Products/Products';
 import Contact from './pages/Contact/Contact';
 import AddProducts from './pages/AddProducts/AddProducts';
 import UpdateProducts from './pages/UpdateProducts/UpdateProducts';
+import ErrorPage from './pages/ErrorPage/ErrorPage';
 // import Login from './pages/Login/Login';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement:<ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -24,7 +26,8 @@ const router = createBrowserRouter([
       },
       {
         path: "/products",
-        element: <Products></Products>
+        element: <Products></Products>,
+        loader: () => fetch('http://localhost:5000/product')
       },
       {
         path: "/contact",
