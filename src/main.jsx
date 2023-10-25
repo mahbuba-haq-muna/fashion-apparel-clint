@@ -12,7 +12,9 @@ import Contact from './pages/Contact/Contact';
 import AddProducts from './pages/AddProducts/AddProducts';
 import UpdateProducts from './pages/UpdateProducts/UpdateProducts';
 import ErrorPage from './pages/ErrorPage/ErrorPage';
-// import Login from './pages/Login/Login';
+import AuthProvider from './components/AuthProvider/AuthProvider';
+import Login from './pages/Login/Login';
+import Register from './pages/Register/Register';
 
 const router = createBrowserRouter([
   {
@@ -22,7 +24,8 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home></Home>
+        element: <Home></Home>,
+        loader: () => fetch('http://localhost:5000/product')
       },
       {
         path: "/products",
@@ -41,16 +44,22 @@ const router = createBrowserRouter([
         path: "/updateProducts",
         element: <UpdateProducts></UpdateProducts>
       },
-      // {
-      //   path: "/login",
-      //   element: <Login></Login>
-      // }
+      {
+        path: "/login",
+        element: <Login></Login>
+      },
+      {
+        path: "/register",
+        element: <Register></Register>
+      }
     ]
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <AuthProvider>
     <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>,
 )

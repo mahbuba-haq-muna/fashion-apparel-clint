@@ -5,15 +5,22 @@ const ProductCard = ({ product }) => {
     return (
         <div>
             <div >
-                <div className="card w-96 bg-base-100 shadow-xl">
-                    <figure className="px-10 pt-10">
-                        <img src={photo} alt="product" className="rounded-xl h-60" />
+                <div className="card bg-purple-100 shadow-xl">
+                    <figure className="px-5 pt-5">
+                        <img src={photo} alt="product" className="rounded-xl h-72 w-72" />
                     </figure>
-                    <div className="card-body items-center text-center">
-                        <h2 className="card-title"></h2>
-                        <p>If a dog chews shoes whose shoes does he choose?</p>
-                        <div className="card-actions">
-                            <button className="btn btn-primary">Buy Now</button>
+                    <div className="card-body items-center ">
+                        <h2 className="card-title my-5 text-[#B55B4E] text-2xl">Product name{name}</h2>
+                       <div className="text-md font-semibold ">
+                       <p>{description}</p>
+                        <p>Type of Product: {type}</p>
+                        <p>Brand: {brand}</p>
+                        <p>Price: {price}$</p>
+                        <p>Rating: {rating}</p>
+                       </div>
+                        <div className="card-actions flex gap-10 my-10">
+                            <button className="btn btn-primary">Details</button>
+                            <button className="btn btn-primary">Update</button>
                         </div>
                     </div>
                 </div>

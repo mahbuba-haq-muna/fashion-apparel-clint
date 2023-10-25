@@ -1,13 +1,24 @@
 import { Link, NavLink } from "react-router-dom";
+import { FaUser } from 'react-icons/fa';
+import { useContext } from "react";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 
 const Navbar = () => {
+
+    const { user, logOut } = useContext(AuthContext);
+    const handleLogOut = ()=>{
+        logOut()
+        .then()
+        .catch()
+    }
+
+    console.log(user)
+
     const navLinks = <>
         <li className=" font-semibold"><NavLink to="/">Home</NavLink></li>
-        <li className=" font-semibold"><NavLink to="/products">Products</NavLink></li>
-        <li className=" font-semibold"><NavLink to="/contact">contact</NavLink></li>
         <li className=" font-semibold"><NavLink to="/addProducts">Add products</NavLink></li>
-        <li className=" font-semibold"><NavLink to="/updateProducts">Update products</NavLink></li>
+        <li className=" font-semibold"><NavLink to="/updateProducts">My Cart</NavLink></li>
     </>
 
     return (
@@ -33,9 +44,29 @@ const Navbar = () => {
                         }
                     </ul>
                 </div>
+                
                 <div className="navbar-end">
-                    <Link to={"/login"}className="btn">Login</Link>
+                
+
+                    <label tabIndex={0} className="btn btn-circle avatar mr-3 border ">
+                        
+                        
+                        <div>
+                            <FaUser></FaUser>
+                        </div>
+                    </label>
+                   
+                    {
+                        user ? <button onClick={handleLogOut} className="btn">Sign Out</button>
+                            :
+                            <Link to="/login">
+                                <button className="btn">Login</button>
+                            </Link>
+                    }
+
+
                 </div>
+                
             </div>
         </div>
     );
