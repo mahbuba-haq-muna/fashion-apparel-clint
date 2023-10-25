@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import Header from "../Header/Header";
-import Brand from "./Brand";
+import Brand from "../Brand/Brand";
+import Trending from "./Trending";
 
 
 const Home = () => {
@@ -8,13 +9,16 @@ const Home = () => {
     return (
         <div>
            <Header></Header>
-           <div>
-            {/* {
+           <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
+            {
                 brands.map(brand => <Brand
                 key={brand.id}
                 brand={brand}
                 ></Brand>)
-            } */}
+            }
+           </div>
+           <div className="my-20">
+            <Trending></Trending>
            </div>
         </div>
     );
