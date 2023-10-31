@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 
 const Brand = ({ brand }) => {
-    const { logo, brand_name } = brand;
+    const { logo } = brand;
     return (
         <div>
             <Link to={"/products"}>
@@ -10,10 +10,7 @@ const Brand = ({ brand }) => {
                     <div>
                         <img src={logo} alt="Shoes" className="w-full h-48" />
                     </div>
-                    <div className="text-center">
-                        <h2 className="card-title uppercase text-center">{brand_name}</h2>
-
-                    </div>
+                   
                 </div>
             </Link>
         </div>

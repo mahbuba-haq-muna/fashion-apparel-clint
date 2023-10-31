@@ -1,0 +1,27 @@
+[
+    {
+      "id": 1,
+      "name": "Nike",
+      "logo": "https://i.imgur.com/5lP1nwc.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Adidas",
+      "logo": "https://i.imgur.com/K8znAT0.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Zara",
+      "logo": "https://i.imgur.com/Sawaho9.png"
+    },
+    {
+      "id": 4,
+      "name": "Gucci",
+      "logo": "https://i.imgur.com/mQu8hf6.png"
+    },
+    {
+      "id": 5,
+      "name": "H&M",
+      "logo": "https://i.imgur.com/JM056Wg.png"
+    }
+  ]

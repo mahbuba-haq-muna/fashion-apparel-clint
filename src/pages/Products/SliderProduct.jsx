@@ -1,64 +1,41 @@
 
-import PropTypes from 'prop-types';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 
-import React, { Component } from "react";
-import Slider from "react-slick";
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 
 
-var settings = {
-    dots: true,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 4,
-    initialSlide: 0,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true
-        }
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
+
+
+const SliderProduct = () => {
+
+  return (
+    <Swiper
+      // install Swiper modules
+      modules={[Navigation, Pagination, Scrollbar, A11y]}
+      spaceBetween={50}
+      slidesPerView={1}
+      navigation
+      pagination={{ clickable: true }}
+      scrollbar={{ draggable: true }}
+      onSwiper={(swiper) => console.log(swiper)}
+      onSlideChange={() => console.log('slide change')}
+    >
+      <SwiperSlide><img src="https://i.imgur.com/I7rZfMc.jpg" alt="" className='h-96 w-full' /></SwiperSlide>
+      <SwiperSlide><img src="https://i.imgur.com/IpGJwTf.jpg" alt="" className='h-96 w-full' /></SwiperSlide>
+      <SwiperSlide><img src="https://i.imgur.com/RMgPf8b.jpg" alt="" className='h-96 w-full' /></SwiperSlide>
+      
+      
+    </Swiper>
+  );
 };
 
-const SliderProduct = ({ products }) => {
-    const { name, brand, type, description, price, rating, photo, _id } = products;
-    return (
-        <div>
 
-                <Slider {...settings}>
-                {products.map((product, index) => (
-                            // Render your products here
-                            <div key={index}>
-                                <img src={product.photo} alt="" />
-                            </div>
-                        ))}
-                </Slider>
-        </div>
-    );
-};
-SliderProduct.propTypes = {
-    products: PropTypes.array.isRequired,
-    
-  };
+
 
 export default SliderProduct;

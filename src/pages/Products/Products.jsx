@@ -8,7 +8,7 @@ const Products = () => {
     const products = useLoaderData();
     return (
         <div>
-            {/* <SliderProduct products={products}></SliderProduct> */}
+            <SliderProduct></SliderProduct>
             <h1 className="text-5xl font-semibold text-center my-10">our products {products.length}</h1>
 
             <div className="grid md:grid-cols-2 gap-20 my-10">
