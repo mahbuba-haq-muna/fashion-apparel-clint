@@ -122,7 +122,9 @@ const AddProducts = () => {
                 </div>
 
 
-                <input type="submit" value="Add Product" className="btn btn-block my-10 btn-neutral  " />
+                <div className="w-full text-center">
+                       <input type="submit" value="Add Product" className="btn bg-fuchsia-800 text-white hover:text-[#B55B4E] my-10 " />
+                       </div>
             </form>
         </div>
     );

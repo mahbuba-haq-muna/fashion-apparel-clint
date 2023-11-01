@@ -42,8 +42,7 @@ const Register = () => {
             setSuccess('Registered successfully')
 
             updateProfile(result.user, {
-                displayName: name,
-                photoURL: "https://example.com/jane-q-user/profile.jpg"
+                displayName: name
 
                 .then()
                 .catch()
@@ -61,7 +60,7 @@ const Register = () => {
     return (
         <div>
             <div className=" text-center" >
-            <h1 className="pt-10 font-lobstar font-bold text-3xl">Register Now</h1>
+            <h1 className="pt-10  font-bold text-3xl">Register Now</h1>
             <form onSubmit={handleRegister} className="card-body lg:w-1/2 mx-auto border rounded-md my-8 bg-purple-100 font-josefin text-xl">
                 <div className="form-control">
                     <label className="label">

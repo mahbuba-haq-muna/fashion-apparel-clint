@@ -20,8 +20,8 @@ const ProductCard = ({ product }) => {
                         <p>Rating: {rating}</p>
                        </div>
                         <div className="card-actions flex gap-10 my-10 ">
-                            <Link to={`/products/${_id}`} ><button className="btn bg-fuchsia-800 text-white">Details</button></Link>
-                            <Link to={`/updateProducts/`}><button className="btn bg-fuchsia-800 text-white">Update</button></Link>
+                            <Link to={`/products/${_id}`} ><button className="btn bg-fuchsia-800 text-white hover:text-[#B55B4E]">Details</button></Link>
+                            <Link to={`/updateProducts/${_id}`}><button className="btn bg-fuchsia-800 text-white hover:text-[#B55B4E]">Update</button></Link>
                         </div>
                     </div>
                 </div>
