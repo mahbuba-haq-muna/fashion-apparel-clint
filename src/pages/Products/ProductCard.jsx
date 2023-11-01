@@ -11,7 +11,7 @@ const ProductCard = ({ product }) => {
                         <img src={photo} alt="product" className="rounded-xl h-72 w-72" />
                     </figure>
                     <div className="card-body items-center ">
-                        <h2 className="card-title my-5 text-[#B55B4E] text-2xl">Product name{name}</h2>
+                        <h2 className="card-title my-5 text-[#B55B4E] text-2xl"> {name}</h2>
                        <div className="text-md font-semibold ">
                        <p>{description}</p>
                         <p>Type of Product: {type}</p>

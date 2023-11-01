@@ -8,7 +8,6 @@ import {
 import Root from './Root/Root.jsx';
 import Home from './components/Home/Home';
 import Products from './pages/Products/Products';
-import Contact from './pages/Contact/Contact';
 import AddProducts from './pages/AddProducts/AddProducts';
 import UpdateProducts from './pages/UpdateProducts/UpdateProducts';
 import ErrorPage from './pages/ErrorPage/ErrorPage';
@@ -16,6 +15,8 @@ import AuthProvider from './components/AuthProvider/AuthProvider';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import ProductDetails from './components/ProductDetails/ProductDetails';
+import NoProduct from './components/NoProduct/NoProduct';
+import Cart from './pages/Cart/Cart';
 
 const router = createBrowserRouter([
   {
@@ -34,13 +35,17 @@ const router = createBrowserRouter([
         loader: () => fetch('http://localhost:5000/product')
       },
       {
+        path:"/noProduct",
+        element: <NoProduct></NoProduct>
+      },
+      {
         path: "/products/:id",
         element: <ProductDetails></ProductDetails>,
         loader: ({params}) => fetch(`http://localhost:5000/product/${params.id}`)
       },
       {
-        path: "/contact",
-        element: <Contact></Contact>
+        path: "/cart",
+        element: <Cart></Cart>
       },
       {
         path: "/addProducts",

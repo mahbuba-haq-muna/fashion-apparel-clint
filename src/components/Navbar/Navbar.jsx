@@ -50,23 +50,24 @@ const Navbar = () => {
 
                     <label tabIndex={0} className="btn btn-circle avatar mr-3 border ">
 
-                        {/* {
-                            user ? user._UserImp.photoURL
+                        {
+                            user ? <img src={user.photoURL
+                            } alt="" className="rounded-full" />
                                 :
                                 <div>
                                     <FaUser></FaUser>
                                 </div>
 
-                        } */}
+                        }
 
                     </label>
-{/* 
+
                     {
-                        user ? user._UserImp.displayName
+                        user ? user.displayName
                         :
                         <p></p>
 
-                    } */}
+                    } 
 
                     {
                         user ? <button onClick={handleLogOut} className="btn">Sign Out</button>
