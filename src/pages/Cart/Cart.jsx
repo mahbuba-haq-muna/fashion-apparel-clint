@@ -1,9 +1,32 @@
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../components/AuthProvider/AuthProvider";
+import CartProduct from "../../components/CartProduct/CartProduct";
 
 
 const Cart = () => {
+    const {user} = useContext(AuthContext)
+    const [cart, setCart] = useState([]);
+
+    useEffect(()=>{
+        fetch(`http://localhost:5000/cart/${user?.email}`)
+        .then(res=> res.json())
+        .then(data =>{
+            console.log(data)
+            setCart(data)
+        })
+    },[user])
     return (
         <div>
-            cart products
+           <div className="grid md:grid-cols-2 gap-6">
+           {
+                cart?.map(aCart=> <CartProduct
+                key={aCart._id}
+                aCart={aCart}
+                >
+
+                </CartProduct>)
+            }
+           </div>
         </div>
     );
 };

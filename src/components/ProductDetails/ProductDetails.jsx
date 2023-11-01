@@ -1,12 +1,27 @@
+import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 
 const ProductDetails = () => {
+    const {user} = useContext(AuthContext)
     const details = useLoaderData();
 
 
     const handleAddCart = () => {
+        const data = {...details,email:user?.email}
+        fetch("http://localhost:5000/cart", {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(res=> res.json())
+        .then(data =>{
+            console.log(data)
+        })
         Swal.fire({
             position: 'top-end',
             icon: 'success',
