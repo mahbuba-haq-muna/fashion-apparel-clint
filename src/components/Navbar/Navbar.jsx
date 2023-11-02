@@ -1,12 +1,18 @@
 import { Link, NavLink } from "react-router-dom";
 import { FaUser } from 'react-icons/fa';
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import Toggle from "../Toggle/Toggle";
 
 
 const Navbar = () => {
 
+   
+    
     const { user, logOut } = useContext(AuthContext);
+
+   
+
     const handleLogOut = () => {
         logOut()
             .then()
@@ -23,7 +29,7 @@ const Navbar = () => {
 
     return (
         <div>
-            <div className="navbar bg-base">
+            <div className="navbar bg-base `navbar ${theme}`">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -36,6 +42,9 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <a className=" normal-case text-xl"><span className="text-[#B55B4E] font-bold">Style</span>In</a>
+
+                   
+
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -64,10 +73,10 @@ const Navbar = () => {
 
                     {
                         user ? user.displayName
-                        :
-                        <p></p>
+                            :
+                            <p></p>
 
-                    } 
+                    }
 
                     {
                         user ? <button onClick={handleLogOut} className="btn">Sign Out</button>

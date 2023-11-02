@@ -5,14 +5,15 @@ import Trending from "./Trending";
 import { Link, useLoaderData } from "react-router-dom";
 
 
+
 const Home = () => {
     const brands = useLoaderData();
 
     return (
-        <div>
+        <div >
             <Header></Header>
             <div className="my-20 ">
-                <h1 className="text-5xl text-center font-bold">Our Brands</h1>
+                <h1 className="text-5xl text-center font-bold my-10">Our Brands</h1>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-10 py-10 bg-purple-100">
 
 
