@@ -3,6 +3,7 @@ import Header from "../Header/Header";
 import Brand from "../Brand/Brand";
 import Trending from "./Trending";
 import { Link, useLoaderData } from "react-router-dom";
+import About from "./About";
 
 
 
@@ -36,7 +37,11 @@ const Home = () => {
 
                 </div>
                 <div className="my-20">
+
                     <Trending></Trending>
+                </div>
+                <div>
+                    <About></About>
                 </div>
             </div>
         </div>
