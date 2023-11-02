@@ -20,7 +20,7 @@ const CartProduct = ({ aCart, product, setProduct }) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/cart/${_id}`,{
+                fetch(`https://fashion-apparel-server-5axc746v1-munas-projects-85745747.vercel.app/cart/${_id}`,{
                     method: 'DELETE'
                 })
                     .then(res => res.json())
