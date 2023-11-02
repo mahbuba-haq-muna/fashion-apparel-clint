@@ -6,6 +6,8 @@ import CartProduct from "../../components/CartProduct/CartProduct";
 const Cart = () => {
     const {user} = useContext(AuthContext)
     const [cart, setCart] = useState([]);
+    const [product, setProduct] = useState(cart);
+
 
     useEffect(()=>{
         fetch(`http://localhost:5000/cart/${user?.email}`)
@@ -22,6 +24,9 @@ const Cart = () => {
                 cart?.map(aCart=> <CartProduct
                 key={aCart._id}
                 aCart={aCart}
+                setProduct={setProduct}
+                product={product}
+                
                 >
 
                 </CartProduct>)

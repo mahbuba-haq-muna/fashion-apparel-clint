@@ -49,7 +49,7 @@ const UpdateProducts = () => {
         return (
             <div>
                 <div className=" bg-purple-100 p-10  ">
-                    <h1 className=" text-4xl text-center mt-10 mb-5 font-bold text-[#B55B4E] ">Update {name}</h1>
+                    <h1 className=" text-4xl text-center mt-10 mb-5 font-bold text-[#B55B4E] ">{name}</h1>
                     <p className="text-2xl text-center mb-7">Please fill out the following fields to update {name}</p>
                     <form onSubmit={handleUpdateProduct}>
                         {/* row */}
@@ -115,17 +115,7 @@ const UpdateProducts = () => {
                             </div>
                         </div>
                         {/* row */}
-                        <div className="md:flex gap-10">
-                            <div className="form-control md:w-full">
-                                <label className="label">
-                                    <span className="label-text">Short description</span>
-                                </label>
-                                <label className="input-group">
-
-                                    <input type="textarea" name="description" defaultValue={description} placeholder="Short description" className="input input-bordered md:w-full p-10" />
-                                </label>
-                            </div>
-                        </div>
+                        
 
 
                        <div className="w-full text-center">
