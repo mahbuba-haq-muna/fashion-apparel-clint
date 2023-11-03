@@ -14,7 +14,6 @@ const UpdateProducts = () => {
         const name = form.name.value;
         const brand = form.brand.value;
         const type = form.type.value;
-        const description = form.description.value;
         const price = form.price.value;
         const rating = form.rating.value;
         const photo = form.photo.value;
@@ -24,7 +23,7 @@ const UpdateProducts = () => {
 
         // send data 
 
-        fetch(`http://localhost:5000/product/${_id}`, {
+        fetch(`https://fashion-apparel-server-mu.vercel.app/product/${_id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",

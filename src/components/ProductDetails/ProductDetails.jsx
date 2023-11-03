@@ -11,7 +11,7 @@ const ProductDetails = () => {
 
     const handleAddCart = () => {
         const data = {...details,email:user?.email}
-        fetch("https://fashion-apparel-server-5axc746v1-munas-projects-85745747.vercel.app/cart", {
+        fetch("https://fashion-apparel-server-mu.vercel.app/cart", {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

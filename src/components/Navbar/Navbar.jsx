@@ -2,7 +2,6 @@ import { Link, NavLink } from "react-router-dom";
 import { FaUser } from 'react-icons/fa';
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
-import Toggle from "../Toggle/Toggle";
 
 
 const Navbar = () => {
