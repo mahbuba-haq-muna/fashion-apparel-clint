@@ -10,11 +10,12 @@ const Cart = () => {
 
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/cart/${user?.email}`)
+        fetch(`https://fashion-apparel-server-nncsvbu8u-munas-projects-85745747.vercel.app/${user?.email}`)
         .then(res=> res.json())
         .then(data =>{
             console.log(data)
             setCart(data)
+            
         })
     },[user])
     return (

@@ -6,6 +6,7 @@ import SliderProduct from "./SliderProduct";
 const Products = () => {
 
     const products = useLoaderData();
+    console.log(products)
     return (
         <div>
             <SliderProduct></SliderProduct>
