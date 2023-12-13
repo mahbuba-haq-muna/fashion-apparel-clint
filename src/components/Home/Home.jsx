@@ -30,7 +30,7 @@ const Home = () => {
                                 <p className="text-2xl font-semibold border-b-4  ">Levi's</p>
                             </div>
                             <div>
-                                <img src="https://i.imgur.com/DaDdXkL.png" alt="Shoes" className="w-full md:h-48 mt-5" />
+                                <img src="https://i.imgur.com/x3taU88.jpg" alt="Shoes" className="w-full md:h-48 mt-5" />
                             </div>
                         </div>
                     </Link>

@@ -5,23 +5,23 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 
 
 const ProductDetails = () => {
-    const {user} = useContext(AuthContext)
+    const { user } = useContext(AuthContext)
     const details = useLoaderData();
 
 
     const handleAddCart = () => {
-        const data = {...details,email:user?.email}
-        fetch("https://fashion-apparel-server-mu.vercel.app/cart", {
+        const data = { ...details, email: user?.email }
+        fetch("https://fashion-apparel-server-navy.vercel.app/cart", {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
             },
             body: JSON.stringify(data)
         })
-        .then(res=> res.json())
-        .then(data =>{
-            console.log(data)
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+            })
         Swal.fire({
             position: 'top-end',
             icon: 'success',
